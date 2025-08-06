@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "5b00b7b0-c061-41ca-bf4b-f66b9339995d",
+		"name": "Pet API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29799904"
+	},
+	"item": [
+		{
+			"name": "petstore/pet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n {\r\n    \"name\": \"Solo\",\r\n    \"type\": \"Rabbit\",\r\n    \"age\": 1,\r\n    \"breed\": \"Mini Rex\"\r\n  }\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{/petstore/:id}}/petstore/pet",
+					"host": [
+						"{{/petstore/:id}}"
+					],
+					"path": [
+						"petstore",
+						"pet"
+					]
+				},
+				"description": "request name -: single pet details entry\r\ndecsription -: insert single pet details set"
+			},
+			"response": []
+		},
+		{
+			"name": "petstore/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n  "
+				},
+				"url": {
+					"raw": "{{/petstore/:id}}/petstore/2",
+					"host": [
+						"{{/petstore/:id}}"
+					],
+					"path": [
+						"petstore",
+						"2"
+					]
+				},
+				"description": "request name-: Get Pet by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "/petstore/pet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{/petstore/:id}}/petstore/pet",
+					"host": [
+						"{{/petstore/:id}}"
+					],
+					"path": [
+						"petstore",
+						"pet"
+					]
+				},
+				"description": "get all pets"
+			},
+			"response": []
+		},
+		{
+			"name": "/petstore/:id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Buddy Updated\",\r\n  \"type\": \"Dog\",\r\n  \"age\": 5,\r\n  \"breed\": \"Golden Retriever\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{/petstore/:id}}/petstore/5",
+					"host": [
+						"{{/petstore/:id}}"
+					],
+					"path": [
+						"petstore",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/petstore/:id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/petstore/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"petstore",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "/petstore/:id",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
